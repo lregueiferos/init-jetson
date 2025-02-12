@@ -3,7 +3,12 @@ sudo apt upgrade -y
 sudo apt-get install curl
 cd
 cd Desktop
+mkdir Dashboard
+mkdir Rover-Code
+cd Dashbaord
 git clone https://github.com/BinghamtonRover/Dashboard
+cd ..
+cd Rover-Code
 git clone https://github.com/BinghamtonRover/Rover-Code
 cd
 cd Downloads
