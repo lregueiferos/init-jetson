@@ -1,4 +1,4 @@
-cd Dashboard/Dashbaord
+cd Desktop/Dashboard/Dashbaord
 git pull
 flutter build linux
 cd build/linux/x86/release/bundle
