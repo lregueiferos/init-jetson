@@ -1,3 +1,4 @@
+cd
 cd Desktop/Dashboard
 git pull
 flutter build linux
