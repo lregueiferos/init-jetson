@@ -9,7 +9,7 @@ cd lib
 mv libSDL3.so.0.1.5 libSDL3.so
 cd ..
 #temp
-cd ../..
+cd 
 cd Desktop/Rover-Code
 git submodule update --init
 git pull
