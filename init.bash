@@ -1,8 +1,9 @@
 sudo apt update
 sudo apt upgrade -y
+sudo apt-get install curl
 cd
 cd Desktop
-mkdir Dashbaord
+mkdir Dashboard
 mkdir Rover-Code
 cd Dashbaord
 git clone https://github.com/BinghamtonRover/Dashboard
