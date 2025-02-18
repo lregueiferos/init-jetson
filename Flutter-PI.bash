@@ -16,4 +16,6 @@ cmake ..
 make -j`nproc`
 sudo make install
 sudo systemctl set-default multi-user.target
-flutter-pi ~/Desktop/Dashbaord
+cd Desktop/Dashbaord
+flutter build bundle
+flutter-pi ~/Desktop/Dashbaord/build/flutter_assets
