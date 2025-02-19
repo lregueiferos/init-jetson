@@ -1,0 +1,12 @@
+[Unit]
+Description=Rover-init
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=rover
+ExecStart=/usr/init-jetson/Xinit.sh
+[Install]
+WantedBy=multi-user.target
