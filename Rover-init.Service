@@ -1,15 +1,18 @@
 [Unit]
 Description=Rover-init
+After=multi-user.target network.target display-manager.service
 StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=1
-WorkingDirectory=/usr/init-jetson
-User=rover
+User=rover  
 Environment=DISPLAY=:0
+WorkingDirectory=/usr/init-jetson
 ExecStart=/usr/init-jetson/Xinit.sh
+StandardOutput=journal
+StandardError=journal
 
 [Install]
 WantedBy=multi-user.target
