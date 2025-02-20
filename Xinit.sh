@@ -3,7 +3,9 @@
 export DISPLAY=:0
 export XDG_SESSION_TYPE=x11
 
-cd ~/Desktop/Dashboard/build/linux/release/bundle || exit
+cd ~/Desktop/Dashboard/build/linux
+cd *
+cd release/bundle || exit
 
 # Ensure X server is running before launching
 while ! pgrep Xorg > /dev/null; do
