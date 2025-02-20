@@ -1,13 +1,15 @@
 [Unit]
 Description=Rover-init
 StartLimitIntervalSec=0
+
 [Service]
 Type=simple
 Restart=always
-WorkingDirectory=/usr/init-jetson
-export DISPLAY=:0
 RestartSec=1
+WorkingDirectory=/usr/init-jetson
 User=root
+Environment=DISPLAY=:0
 ExecStart=/usr/init-jetson/Xinit.sh
+
 [Install]
 WantedBy=multi-user.target
