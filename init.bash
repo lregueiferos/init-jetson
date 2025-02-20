@@ -12,4 +12,5 @@ cd flutter-installer
 bash install.sh
 cd
 sudo apt-get install libasound2-dev
+mv Rover-init.Service /etc/systemd/system/Rover-init.service
 reboot
