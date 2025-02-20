@@ -4,6 +4,7 @@ StartLimitIntervalSec=0
 [Service]
 Type=simple
 Restart=always
+WorkingDirectory=/usr/init-jetson
 RestartSec=1
 User=rover
 ExecStart=/usr/init-jetson/Xinit.sh
