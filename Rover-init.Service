@@ -7,7 +7,7 @@ Restart=always
 WorkingDirectory=/usr/init-jetson
 export DISPLAY=:0
 RestartSec=1
-User=rover
+User=root
 ExecStart=/usr/init-jetson/Xinit.sh
 [Install]
 WantedBy=multi-user.target
