@@ -1,7 +1,7 @@
 set -e
 
 if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
+   echo "This script must be run with sudo" 
    exit 1
 fi
 echo "this script will take up to 3 hours are you sure you want to run this now"
@@ -9,7 +9,6 @@ read -p "Y/N " response
 if [[response == "N"]]
     exit
 fi 
-
 
 #checks the number of phisical cpu cores on the system
 if [[ $(nproc) -eq 6]]; then
@@ -43,10 +42,13 @@ if [[ $(nproc) -eq 6]]; then
     TimedLoginDelay = 10" >> /etc/gdm3/custom.conf
     sudo systemctl set-default multi-user.target
     #installs opencv with cuda support
-    git clone https://github.com/AastaNV/JEP
-    cd JEP/script
-    sudo bash install_opencv4.10.0_Jetpack6.1.sh
-
+    echo "do you want to compile opencv with cuda"
+    read -p "Y/N" cuda
+    if [[cuda == Y]]
+        git clone https://github.com/Qengineering/Install-OpenCV-Jetson-Nano
+        cd Install-OpenCV-Jetson-Nano
+        sudo bash OpenCV-4-11-0.sh
+    fi
     #install aditional requrements and adds the rover-init service to systemd
     sudo apt-get install libasound2-dev
     mv Rover-init.Service /etc/systemd/system/Rover-init.service
