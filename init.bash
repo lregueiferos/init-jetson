@@ -45,9 +45,10 @@ if [[ $(nproc) -eq 6]]; then
     echo "do you want to compile opencv with cuda"
     read -p "Y/N" cuda
     if [[cuda == Y]]
-        git clone https://github.com/Qengineering/Install-OpenCV-Jetson-Nano
-        cd Install-OpenCV-Jetson-Nano
-        sudo bash OpenCV-4-11-0.sh
+        wget https://nvidia.box.com/shared/static/9si945yrzesspmg9up4ys380lqxjylc3.whl -O torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
+        pip3 install torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
+        wget https://nvidia.box.com/shared/static/u0ziu01c0kyji4zz3gxam79181nebylf.whl -O torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
+        pip3 install torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements and adds the rover-init service to systemd
     sudo apt-get install libasound2-dev
