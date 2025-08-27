@@ -50,9 +50,8 @@ if [[ $(nproc) -eq 6]]; then
         wget https://nvidia.box.com/shared/static/u0ziu01c0kyji4zz3gxam79181nebylf.whl -O torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
         pip3 install torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
     fi
-    #install aditional requrements and adds the rover-init service to systemd
+    #install aditional requrements
     sudo apt-get install libasound2-dev
-    mv Rover-init.Service /etc/systemd/system/Rover-init.service
     flutter doctor
     reboot
 
