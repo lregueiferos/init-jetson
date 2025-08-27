@@ -6,7 +6,7 @@ if [[ $EUID -ne 0 ]]; then
 fi
 echo "this script will take up to 3 hours are you sure you want to run this now"
 read -p "Y/N " response
-if [[response == "N"]]
+if [[ response == "N" ]]
     exit
 fi 
 
