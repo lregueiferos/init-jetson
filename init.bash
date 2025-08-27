@@ -4,11 +4,7 @@ if [[ $EUID -ne 0 ]]; then
    echo "This script must be run with sudo" 
    exit 1
 fi
-echo "this script will take up to 3 hours are you sure you want to run this now"
-read -p "Y/N " response
-if [[ response == "N" ]]
-    exit
-fi 
+
 
 #checks the number of phisical cpu cores on the system
 
