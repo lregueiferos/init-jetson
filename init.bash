@@ -34,7 +34,7 @@ fi
 
     # Enabling timed login
     TimedLoginEnable = true
-    TimedLogin = user1
+    TimedLogin = rover
     TimedLoginDelay = 10" >> /etc/gdm3/custom.conf
     sudo systemctl set-default multi-user.target
     #installs opencv with cuda support
