@@ -13,6 +13,7 @@ fi
     sudo apt update
     sudo apt upgrade -y
     sudo apt-get install curl
+    sudo apt-get install libasound2-dev
     cd /home/rover/Desktop
 
     #clones the rover code to the Desktop
@@ -45,7 +46,6 @@ fi
         pip3 install torch==2.3
     fi
     #install aditional requrements
-    sudo apt-get install libasound2-dev
     flutter doctor
     reboot
 
