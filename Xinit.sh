@@ -12,9 +12,6 @@
 export DISPLAY=:0
 export XDG_SESSION_TYPE=x11
 
-cd ~/Desktop/Dashboard/build/linux
-cd *
-cd release/bundle || exit
-
+cd /home/rover/Desktop/Dashboard/build/linux/*/release/bundle || exit
 
 exec xinit ./rover_control_dashboard -- :0 vt1
