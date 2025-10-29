@@ -45,6 +45,7 @@ fi
         pip3 install torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
         wget https://nvidia.box.com/shared/static/u0ziu01c0kyji4zz3gxam79181nebylf.whl -O torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
         pip3 install torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
+        pip3 install torch==2.3
     fi
     #install aditional requrements
     sudo apt-get install libasound2-dev
