@@ -13,20 +13,17 @@ fi
     sudo apt update
     sudo apt upgrade -y
     sudo apt-get install curl
-    cd
-    cd Desktop
+    cd /home/rover/Desktop
 
     #clones the rover code to the Desktop
     git clone https://github.com/BinghamtonRover/Dashboard
     git clone https://github.com/BinghamtonRover/Rover-Code
-    cd
-    cd Downloads
+    cd /home/rover/Downloads
 
     #installs fultter usingthe flutter-installer repo
     git clone https://github.com/NaiveInvestigator/flutter-installer
-    cd flutter-installer
+    cd /home/rover/Downloads/flutter-installer
     bash install.sh
-    cd
 
     echo "# Enabling automatic login
     AutomaticLoginEnable = true
@@ -51,7 +48,4 @@ fi
     sudo apt-get install libasound2-dev
     flutter doctor
     reboot
-
-# runs the pi setup if the number of cores is not 6 as the jetson has 6 cpu cores and the pi has 4
-# if future pi's have 6 cores instead evaluate the system based off of the userid
 
