@@ -17,14 +17,12 @@ fi
     cd /home/rover/Desktop
 
     #clones the rover code to the Desktop
+    git clone https://github.com/flutter/flutter -b stable
+    export PATH="$PATH:`pwd`/flutter/bin"
+    flutter doctor
     git clone https://github.com/BinghamtonRover/Dashboard
     git clone https://github.com/BinghamtonRover/Rover-Code
     cd /home/rover/Downloads
-
-    #installs fultter usingthe flutter-installer repo
-    git clone https://github.com/NaiveInvestigator/flutter-installer
-    cd /home/rover/Downloads/flutter-installer
-    bash install.sh
 
     echo "# Enabling automatic login
     AutomaticLoginEnable = true
