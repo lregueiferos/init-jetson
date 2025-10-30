@@ -1,23 +1,22 @@
     sudo apt update
     sudo apt upgrade -y
     sudo apt install curl
-    cd Desktop
+    cd /home/rover/Desktop
     git clone https://github.com/BinghamtonRover/Dashboard
     git clone https://github.com/BinghamtonRover/Rover-Code
     cd
-    cd Downloads
+    cd /home/rover/Downloads
     git clone https://github.com/NaiveInvestigator/flutter-installer
-    cd flutter-installer
+    cd /home/rover/Downloads/flutter-installer
     bash install.sh
     sudo rm -rf flutter-installer
-    cd
     flutter doctor
-
-    # downlaods flutter pi and flutterpi-tool
+    cd
+    # downloads Flutter Pi and FlutterPi-Tool
     sudo apt install cmake libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev libdrm-dev libgbm-dev ttf-mscorefonts-installer fontconfig libsystemd-dev libinput-dev libudev-dev  libxkbcommon-dev
     sudo fc-cache
     git clone --recursive https://github.com/ardera/flutter-pi
-    cd flutter-pi
+    cd /home/rover/flutter-pi
     mkdir build && cd build
     cmake ..
     make -j`nproc`
