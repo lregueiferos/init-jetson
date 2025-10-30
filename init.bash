@@ -12,8 +12,7 @@ fi
     #updates the system
     sudo apt update
     sudo apt upgrade -y
-    sudo apt-get install curl
-    sudo apt-get install libasound2-dev
+    sudo apt-get install curl busybox nano libasound2-dev cantools 
     cd /home/rover/Desktop
 
     #clones the rover code to the Desktop
