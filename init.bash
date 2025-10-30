@@ -22,6 +22,7 @@ fi
     git clone https://github.com/BinghamtonRover/Dashboard
     git clone https://github.com/BinghamtonRover/Rover-Code
     cd /home/rover/Downloads
+    mv /home/rover/init-jetson/rc.local /etc/
 
     echo "# Enabling automatic login
     AutomaticLoginEnable = true
