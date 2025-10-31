@@ -1,11 +1,11 @@
     sudo apt update
     sudo apt upgrade -y
     sudo apt install curl
-    cd /home/rover/Desktop
-    git clone https://github.com/BinghamtonRover/Dashboard
-    git clone https://github.com/BinghamtonRover/Rover-Code
+    cd /home/rover
+    git clone --recursive https://github.com/BinghamtonRover/Dashboard
+    git clone --recursive https://github.com/BinghamtonRover/Rover-Code
     cd
-    cd /home/rover/Downloads
+    cd /home/rover
     git clone https://github.com/NaiveInvestigator/flutter-installer
     cd /home/rover/Downloads/flutter-installer
     bash install.sh
