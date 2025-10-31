@@ -8,16 +8,15 @@ fi
     sudo apt update > /dev/null 2>&1
     sudo apt upgrade -y > /dev/null 2>&1
     sudo apt-get install curl busybox nano libasound2-dev can-utils > /dev/null 2>&1
-    cd /home/rover/Desktop
+    cd /home/rover
 
     #clones the rover code to the Desktop
     git clone https://github.com/flutter/flutter -b stable > /dev/null 2>&1
-    export PATH="$PATH:`pwd`/flutter/bin"
+    export PATH="$PATH:/home/rover/flutter/bin"
     flutter doctor > /dev/null 2>&1
-    git clone https://github.com/BinghamtonRover/Dashboard > /dev/null 2>&1
-    git clone https://github.com/BinghamtonRover/Rover-Code > /dev/null 2>&1
-    cd /home/rover/Downloads
-    mv /home/rover/init-jetson/rc.local /etc/
+    git clone --recursive https://github.com/BinghamtonRover/Dashboard > /dev/null 2>&1
+    git clone --recursive https://github.com/BinghamtonRover/Rover-Code > /dev/null 2>&1
+    sudo mv /home/rover/init-jetson/rc.local /etc/
 
     echo "# Enabling automatic login
     AutomaticLoginEnable = true
