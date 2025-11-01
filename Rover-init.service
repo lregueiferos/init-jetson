@@ -1,16 +1,28 @@
 [Unit]
 Description=Rover-init
-After=multi-user.target network.target display-manager.service
+After=network.target multi-user.target
+Before=getty@tty1.service
+Documentation=man:systemd-sysv-generator(8)
+Wants=network.target
 StartLimitIntervalSec=0
 
 [Service]
 Type=simple
 Restart=always
 RestartSec=1
-User=rover  
+# Run as root so the unit can stop/getty and grab the VT; the actual GUI
+# process will be executed as the 'rover' user via su.
+User=root
 Environment=DISPLAY=:0
+Environment=XDG_SESSION_TYPE=x11
 WorkingDirectory=/usr/init-jetson
-ExecStart=/usr/init-jetson/Xinit.sh
+# Stop getty on tty1 so X can bind to VT1, then run the Xinit script as rover.
+ExecStartPre=/bin/systemctl stop getty@tty1.service
+ExecStart=/bin/bash -lc "/bin/su - rover -c '/bin/bash /usr/init-jetson/Xinit.sh'"
+ExecStopPost=/bin/systemctl start getty@tty1.service
+TimeoutStartSec=30
+KillMode=process
+LimitNOFILE=4096
 StandardOutput=journal
 StandardError=journal
 
