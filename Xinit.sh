@@ -46,4 +46,5 @@ fi
 # Start a DBus session and run X with the dashboard client. Use -nolisten tcp
 # and bind to VT1. If X is already running on :0 this will fail - the service
 # should be disabled in that case to avoid conflicts.
+xrandr -s 1920x1080
 exec /usr/bin/dbus-launch --exit-with-session /usr/bin/xinit ./rover_control_dashboard -- :0 vt1 -nolisten tcp
