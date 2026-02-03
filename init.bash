@@ -34,9 +34,31 @@ fi
         cd /home/rover/Downloads
         pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
        # Force install Vision and Audio for CUDA 12.6
-pip3 install --no-cache-dir --no-deps \
-  https://pypi.jetson-ai-lab.io/wheels/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl \
-  https://pypi.jetson-ai-lab.io/wheels/torchaudio-2.5.0-cp310-cp310-linux_aarch64.whl
+      # 1. Download the code
+git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision
+cd torchvision
+
+# 2. Tell the installer which version we want
+export BUILD_VERSION=0.20.0
+
+# 3. Start the build (This will take about 5-10 minutes)
+# Use --user to avoid permission issues
+python3 setup.py install --user
+
+# 4. Move back to your home directory
+cd ..
+
+# 1. Download the code
+git clone --branch v2.5.0 https://github.com/pytorch/audio torchaudio
+cd torchaudio
+
+# 2. Tell the installer which version we want
+export BUILD_VERSION=2.5.0
+
+# 3. Start the build (This will take about 3-5 minutes)
+python3 setup.py install --user
+
+cd ..
     fi
     #install aditional requrements
     reboot
