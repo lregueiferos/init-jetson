@@ -32,8 +32,14 @@ fi
     read -p "Y/N" cuda
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
-       pip3 install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 \
-       --index-url https://pypi.jetson-ai-lab.io/jp6/cu122
+      # 2. Install Torch 2.3.0 (Direct link for CUDA 12.6 / JP 6.1)
+pip3 install https://pypi.jetson-ai-lab.io/wheels/torch-2.3.0-cp310-cp310-linux_aarch64.whl
+
+# 3. Install TorchVision 0.18.0
+pip3 install https://pypi.jetson-ai-lab.io/wheels/torchvision-0.18.0-cp310-cp310-linux_aarch64.whl
+
+# 4. Install TorchAudio 2.3.0
+pip3 install https://pypi.jetson-ai-lab.io/wheels/torchaudio-2.3.0-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements
     reboot
