@@ -32,8 +32,7 @@ fi
     read -p "Y/N" cuda
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
-pip3 install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 \
-  --extra-index-url https://pypi.jetson-ai-lab.io/jp6
+pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.4.0a0+872d972e41.nv24.08-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements
     reboot
