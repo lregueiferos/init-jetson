@@ -32,7 +32,7 @@ fi
     read -p "Y/N" cuda
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
-pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.4.0a0+872d972e41.nv24.08-cp310-cp310-linux_aarch64.whl
+pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements
     reboot
