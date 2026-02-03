@@ -32,11 +32,10 @@ fi
     read -p "Y/N" cuda
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
-        wget https://nvidia.box.com/shared/static/9si945yrzesspmg9up4ys380lqxjylc3.whl -O torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
-        pip3 install torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
-        wget https://nvidia.box.com/shared/static/u0ziu01c0kyji4zz3gxam79181nebylf.whl -O torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
+        wget https://nvidia.box.com/shared/static/mp634pt2xcl9697btze69sh32o9968is.whl -O torch-2.3.0-cp310-cp310-linux_aarch64.whl
+        pip3 install torch-2.3.0-cp310-cp310-linux_aarch64.whl
         pip3 install torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
-        pip3 install torch==2.3
+        pip3 install torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements
     reboot
