@@ -33,9 +33,9 @@ fi
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
         pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
-        pip3 install --no-cache-dir \
-  https://pypi.jetson-ai-lab.io/wheels/torchvision-0.20.0-cp310-cp310-linux_aarch64.whl \
-  https://pypi.jetson-ai-lab.io/wheels/torchaudio-2.5.0-cp310-cp310-linux_aarch64.whl
+        pip3 install torchvision torchaudio \
+  --index-url https://pypi.jetson-ai-lab.io/jp6/cu126 \
+  --extra-index-url https://pypi.org/simple
     fi
     #install aditional requrements
     reboot
