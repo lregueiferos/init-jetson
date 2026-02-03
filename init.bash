@@ -35,6 +35,17 @@ fi
         pip3 install --no-cache-dir https://developer.download.nvidia.com/compute/redist/jp/v61/pytorch/torch-2.5.0a0+872d972e41.nv24.08.17622132-cp310-cp310-linux_aarch64.whl
        # Force install Vision and Audio for CUDA 12.6
       # 1. Download the code
+# 1. Update the keyring to ensure you can reach the NVIDIA repos
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/cuda-keyring_1.1-1_all.deb
+sudo dpkg -i cuda-keyring_1.1-1_all.deb
+sudo apt-get update
+
+# 2. Install the missing library and development files
+sudo apt-get install -y libcusparselt0 libcusparselt-dev
+
+# 3. Refresh the system's library cache
+sudo ldconfig
+      
 git clone --branch v0.20.0 https://github.com/pytorch/vision torchvision
 cd torchvision
 
