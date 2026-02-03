@@ -33,13 +33,14 @@ fi
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
       # 2. Install Torch 2.3.0 (Direct link for CUDA 12.6 / JP 6.1)
-pip3 install https://pypi.jetson-ai-lab.io/wheels/torch-2.3.0-cp310-cp310-linux_aarch64.whl
+# 1. Base PyTorch 2.3.0 (This usually works, but here is the official NVIDIA link)
+pip3 install https://developer.download.nvidia.com/compute/redist/jp/v60/pytorch/torch-2.3.0a0+ebedce2.nv24.03-cp310-cp310-linux_aarch64.whl
 
-# 3. Install TorchVision 0.18.0
-pip3 install https://pypi.jetson-ai-lab.io/wheels/torchvision-0.18.0-cp310-cp310-linux_aarch64.whl
+# 2. TorchVision 0.18.0 (Corrected link)
+pip3 install https://developer.download.nvidia.com/compute/redist/jp/v60/pytorch/torchvision-0.18.0a0+6043bc2.nv24.03-cp310-cp310-linux_aarch64.whl
 
-# 4. Install TorchAudio 2.3.0
-pip3 install https://pypi.jetson-ai-lab.io/wheels/torchaudio-2.3.0-cp310-cp310-linux_aarch64.whl
+# 3. TorchAudio 2.3.0 (Corrected link)
+pip3 install https://developer.download.nvidia.com/compute/redist/jp/v60/pytorch/torchaudio-2.3.0+952ea74.nv24.03-cp310-cp310-linux_aarch64.whl
     fi
     #install aditional requrements
     reboot
