@@ -32,12 +32,8 @@ fi
     read -p "Y/N" cuda
     if [[cuda == Y]]; then
         cd /home/rover/Downloads
-        sudo apt-get update
-        sudo apt-get install -y libopenblas-base libopenmpi-dev libomp-dev libjpeg-dev zlib1g-dev
-        wget https://nvidia.box.com/shared/static/mp634pt2xcl9697btze69sh32o9968is.whl -O torch-2.3.0-cp310-cp310-linux_aarch64.whl
-        pip3 install torch-2.3.0-cp310-cp310-linux_aarch64.whl
-        pip3 install torchvision-0.18.0a0+6043bc2-cp310-cp310-linux_aarch64.whl
-        pip3 install torchaudio-2.3.0+952ea74-cp310-cp310-linux_aarch64.whl
+       pip3 install torch==2.3.0 torchvision==0.18.0 torchaudio==2.3.0 \
+       --index-url https://pypi.jetson-ai-lab.io/jp6/cu122
     fi
     #install aditional requrements
     reboot
